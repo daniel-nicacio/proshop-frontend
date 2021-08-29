@@ -1,0 +1,16 @@
+main {
+  min-height: 80vh;
+}
+
+.rating span {
+  padding-top: 3rem;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.card strong {
+  display: block;
+  height: 40px;
+}
