@@ -14,7 +14,7 @@ import Rating from "../components/Rating";
 import Loader from "../components/Loader";
 import Message from "../components/Rating";
 
-import { ListProductDetails } from "../actions/productActions";
+import { listProductDetails } from "../actions/productActions";
 
 function ProductScreen({ match, history }) {
   const [qty, setQty] = useState(1);
@@ -24,7 +24,7 @@ function ProductScreen({ match, history }) {
   const { loading, error, product } = productDetails;
 
   useEffect(() => {
-    dispatch(ListProductDetails(match.params.id));
+    dispatch(listProductDetails(match.params.id));
   }, [dispatch, match]);
 
   const addToCartHandler = () => {

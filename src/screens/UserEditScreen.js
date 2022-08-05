@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -41,7 +40,7 @@ function EditUserScreen({ match, history }) {
         setIsAdmin(user.isAdmin);
       }
     }
-  }, [user, userId, successUpdate, history]);
+  }, [user, userId, successUpdate, history, dispatch]);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -53,6 +52,9 @@ function EditUserScreen({ match, history }) {
     <div>
       <FormContainer>
         <h1>Edit User</h1>
+
+        {loadingUpdate && <Loader />}
+        {errorUpdate && <Message variant="danger">{errorUpdate}</Message>}
 
         {loading ? (
           <Loader />
